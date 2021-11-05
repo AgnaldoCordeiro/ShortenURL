@@ -1,10 +1,13 @@
-import express, { Request, Response } from 'express'
+import express from 'express'
+import { URLController } from '@controllers/URLController';
+const host = "https://localhost:";
+const port = "5000";
 
-const app = express();
+const api = express();
+api.use(express.json())
 
-app.get('/', (req: Request, res: Response) => {
-  return res.json({ message: 'hellow' })
-  
-});
+const urlController = new URLController();
 
-app.listen(5000, () =>  console.log('serve on'));
+api.post("/shorten", urlController.shorten)
+
+api.listen(port, () => console.log(`Express listening ${host + port}`));
