@@ -1,16 +1,29 @@
-import { Request, Response } from 'express'
-import shortid from 'shortid'
-import { config } from '@config/Constants'
+import { Request, Response } from "express";
+import shortid from "shortid";
+import { config } from "@config/Constants";
+import { URLModel } from "@database/model/URL";
 
-export class URLController{
-   async shorten(req: Request, res: Response): Promise<void>{
-    // ver se a url se ja nao existe
-    // criar o hash para a url
-    const { originURL } = req.body
-    const hash = shortid.generate()
-    const shortURL = `${config.API_URL}/${hash}`
-    // salvar a url no banco
-    // retornar a url salva
-    res.json({originURL, hash, shortURL})
+export class URLController {
+  public async shorten(req: Request, res: Response): Promise<void> {
+    const { originURL } = req.body;
+    const url = await URLModel.findOne({ originURL });
+    if (url) {
+      res.json(url);
+      return;
+    }
+    const hash = shortid.generate();
+    const shortURL = `${config.API_URL}/${hash}`;
+    const newURL = await URLModel.create({ hash, shortURL, originURL });
+    res.json(newURL);
+  }
+  public async redirect(req: Request, res: Response): Promise<void> {
+    const { hash } = req.params;
+    const url = await URLModel.findOne({ hash });
+    if (url) {
+      res.redirect(url.originURL);
+      return;
+    }
+
+    res.status(400).send({ error: "URL not fold" });
   }
 }

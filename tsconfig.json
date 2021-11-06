@@ -21,7 +21,11 @@
     "baseUrl": ".",                           
     "paths": {
       "@controllers/*": ["./src/controllers/*"],  
-      "@config/*": ["./src/config/*"]  
+      "@config/*": ["./src/config/*"],  
+      "@database/*": ["./src/database/*"],  
     }
-  }
+  },
+  "include": [
+    "src/**/*"
+  ]
 }
