@@ -1,9 +1,14 @@
 {
   "name": "ApiBackend",
   "version": "1.0.0",
+  "description": "API Shorten URL to MongooDB",
   "main": "index.js",
   "license": "MIT",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
+    "start": "node dist/server.js",
     "build:watch": "tsc -w",
     "dev": "ts-node-dev -r tsconfig-paths/register --respawn --ignore-watch node_modules --no-notify src/server.ts"
   },

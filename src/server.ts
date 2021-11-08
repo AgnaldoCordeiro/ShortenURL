@@ -1,7 +1,8 @@
 import express from "express";
 import { URLController } from "./controllers/URLController";
 import { MongoConnection } from "./database/MongoConnection";
-const host = "https://localhost:";
+
+const host = "http://localhost:";
 const port = "5000";
 
 const api = express();
@@ -11,7 +12,6 @@ const database = new MongoConnection();
 database.connect();
 
 const urlController = new URLController();
-
 api.post("/shorten", urlController.shorten);
 api.get("/:hash", urlController.redirect);
 
