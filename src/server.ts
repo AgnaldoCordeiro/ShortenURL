@@ -1,6 +1,6 @@
 import express from "express";
-import { URLController } from "@controllers/URLController";
-import { MongoConnection } from "@database/MongoConnection";
+import { URLController } from "./controllers/URLController";
+import { MongoConnection } from "./database/MongoConnection";
 const host = "https://localhost:";
 const port = "5000";
 

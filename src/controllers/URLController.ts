@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import shortid from "shortid";
-import { config } from "@config/Constants";
-import { URLModel } from "@database/model/URL";
+import { config } from "../config/Constants";
+import { URLModel } from "../database/model/URL";
 
 export class URLController {
   public async shorten(req: Request, res: Response): Promise<void> {

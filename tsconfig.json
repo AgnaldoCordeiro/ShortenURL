@@ -20,9 +20,9 @@
     "skipLibCheck": true,
     "baseUrl": ".",                           
     "paths": {
-      "@controllers/*": ["./src/controllers/*"],  
-      "@config/*": ["./src/config/*"],  
-      "@database/*": ["./src/database/*"],  
+     // "@controllers/*": ["./src/controllers/*"],  
+     // "@config/*": ["./src/config/*"],  
+     // "@database/*": ["./src/database/*"],  
     }
   },
   "include": [
