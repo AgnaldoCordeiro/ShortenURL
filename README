@@ -1,6 +1,6 @@
-Projeto Encurtador de URL
+# Projeto Encurtador de URL
 
-Foi utilizado TypeScript para o desenvolvimento desse Projeto.
+## Foi utilizado TypeScript para o desenvolvimento desse Projeto.
 Desafios:
 Pegar a URL
 Salvar a URL
@@ -8,35 +8,5 @@ Modificar a URL com Hash
 Salvar a nova URL
 e Enviar a nova URL
 
-Esses desafios foram concluidos, foi utilizado o MoongoDB para o armazenamento de dados
+### Esses desafios foram concluidos, foi utilizado o MoongoDB para o armazenamento de dados
 
-Problemas:
-Esta tendo um problema na hora de build, Não ocorre nem um erro, porem na hora que é feito o node dist/server.js apresenta erros:
-
-node:internal/modules/cjs/loader:936
-throw err;
-^
-
-Error: Cannot find module '@controllers/URLController'
-Require stack:
-
-- C:\Wordspace\Url Encurtador\ApiBackend\dist\server.js
-  at Function.Module.\_resolveFilename (node:internal/modules/cjs/loader:933:15)
-  at Function.Module.\_load (node:internal/modules/cjs/loader:778:27)
-  at Module.require (node:internal/modules/cjs/loader:1005:19)
-  at require (node:internal/modules/cjs/helpers:94:18)
-  at Object.<anonymous> (C:\Wordspace\Url Encurtador\ApiBackend\dist\server.js:7:25)
-  at Module.\_compile (node:internal/modules/cjs/loader:1101:14)
-  at Object.Module.\_extensions..js (node:internal/modules/cjs/loader:1153:10)
-  at Module.load (node:internal/modules/cjs/loader:981:32)
-  at Function.Module.\_load (node:internal/modules/cjs/loader:822:12)
-  at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:79:12) {  
-   code: 'MODULE_NOT_FOUND',
-  requireStack: [ 'C:\\Wordspace\\Url Encurtador\\ApiBackend\\dist\\server.js' ]
-  }
-
-Acredito que seja na hora de compilar que não esta compilando direto a pasta controllers
-
-
-
-Problema Resolvido colocando url statick
